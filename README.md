@@ -4,11 +4,15 @@ vim-autosessoin is a tiny little plugin to save/restore vim sessions automatical
 
 To enable autosession, create an (empty) autosession file in your project root directory and then run vim without any arguments.
 
-	$ touch .autosession	
+	$ touch .session.vim
  
-If you change the autosession file name(default: .autosession), you can edit your .vimrc and enter the following command:
+If you change the autosession file's name(default: .session.vim), you can edit your .vimrc and enter the following command:
 
-	set g:autosession_file = 'your_preferable_filename'
+	set g:autosession_file = 'something.vim'
+
+You can also specify various **sessionoptions** in your .vimrc file as usual. The full description of options can be referenced by typing `:help sessionoptions` command on you Vim (default: "blank,buffers,curdir,folds,help,options,tabpages,winsize"). 
+
+	set sessionoptions=blank,buffers,curdir,tabpages,winpos,folds
 
 ## Installation
 

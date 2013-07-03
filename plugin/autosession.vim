@@ -1,35 +1,30 @@
+" Plugin Name: vim-autosession
 " Maintainer: Sukjoon Kim <sjoonk@gmail.com>
 " Version: 0.1.0
 " Last Modified: 2013-07-03
 " Description: Auto save/load sessions
-
-" if exists('g:loaded_autosession')
-"   finish
-" endif
-" let g:loaded_autosession = 1
-
-if version >= 700
-  set sessionoptions=blank,buffers,curdir,tabpages,winpos,folds
-endif
+"
 
 if !exists('g:autosession_file')
-  let g:autosession_file = '.autosession'
+  let g:autosession_file = '.session.vim'
 endif
 
 let s:session_file = getcwd() . '/' . g:autosession_file
 
 function! SaveSession()
-  execute 'mksession! ' . s:session_file
+  if filereadable(s:session_file)
+    execute 'mksession! ' . s:session_file
+  endif
 endfunction
 
 function! LoadSession()
-  execute 'source ' .  s:session_file
+  if filereadable(s:session_file) && argc() == 0
+    execute 'source ' .  s:session_file
+  endif
 endfunction
 
 "
 " Restore and save sessions.
 "
-if filereadable(s:session_file) && argc() == 0
-  autocmd VimEnter * nested call LoadSession()
-  autocmd VimLeave * call SaveSession()
-end
+autocmd VimEnter * call LoadSession()
+autocmd VimLeave * call SaveSession()
