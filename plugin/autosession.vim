@@ -8,6 +8,10 @@
 " endif
 " let g:loaded_autosession = 1
 
+if version >= 700
+  set sessionoptions=blank,buffers,curdir,tabpages,winpos,folds
+endif
+
 if !exists('g:autosession_file')
   let g:autosession_file = '.autosession'
 endif
