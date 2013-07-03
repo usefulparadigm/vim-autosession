@@ -2,11 +2,11 @@
 
 vim-autosessoin is a tiny little plugin to save/restore vim sessions automatically. It detects a 'autosession file' from the project root directory and, if exists, runs plugin automatically.
 
-* To enable autosession, create an (empty) autosession file in your project root directory and then run vim without any arguments.
+To enable autosession, create an (empty) autosession file in your project root directory and then run vim without any arguments.
 
 	$ touch .autosession	
  
-* If you change the autosession file name(default: .autosession), you can edit your .vimrc and enter the following command:
+If you change the autosession file name(default: .autosession), you can edit your .vimrc and enter the following command:
 
 	set g:autosession_file = 'your_preferable_filename'
 
