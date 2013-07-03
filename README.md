@@ -10,7 +10,7 @@ If you change the autosession file's name(default: .session.vim), you can edit y
 
 	set g:autosession_file = 'something.vim'
 
-You can also specify various **sessionoptions** in your .vimrc file as usual. The full description of options can be referenced by typing `:help sessionoptions` command on you Vim (default: "blank,buffers,curdir,folds,help,options,tabpages,winsize"). 
+You can also specify various **sessionoptions** in your .vimrc file as usual. The full description of options can be referenced by typing `:help sessionoptions` command on you Vim. 
 
 	set sessionoptions=blank,buffers,curdir,tabpages,winpos,folds
 
