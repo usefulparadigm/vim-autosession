@@ -18,7 +18,7 @@ function! SaveSession()
 endfunction
 
 function! LoadSession()
-  if filereadable(s:session_file) && argc() == 0
+  if filereadable(s:session_file)
     execute 'source ' .  s:session_file
   endif
 endfunction
@@ -26,5 +26,7 @@ endfunction
 "
 " Restore and save sessions.
 "
-autocmd VimEnter * call LoadSession()
-autocmd VimLeave * call SaveSession()
+if argc() == 0
+  autocmd VimEnter * call LoadSession()
+  autocmd VimLeave * call SaveSession()
+endif
