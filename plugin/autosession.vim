@@ -27,6 +27,6 @@ endfunction
 " Restore and save sessions.
 "
 if argc() == 0
-  autocmd VimEnter * call LoadSession()
+  autocmd VimEnter * nested call LoadSession()
   autocmd VimLeave * call SaveSession()
 endif
